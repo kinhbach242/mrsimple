@@ -1,0 +1,152 @@
+.single-flash-sale{
+    .flash-sale-img {
+        overflow: hidden;
+        margin-bottom: 30px;
+        min-height: 250px;
+        max-height: 370px;
+        background-color: rgb(246, 245, 243);
+        border-bottom: 3px solid #ff8e96;
+        position: relative;
+        &::before{
+            content: "Flash Sale";
+                position: absolute;
+                align-items: center;
+                line-height: 50px;
+                font-size: 15px;
+                color: white;
+                border-radius: 3px;
+                top: 0;
+                left: 0;
+                width: 30%;
+                height: 14%;
+                background: #ff9384;
+                @media #{$sm}{
+                    font-size: 10px;
+                }
+        }
+        img {
+            width:100%;
+            transform:scale(1);
+            object-fit: cover;
+           @include transition(.4s)
+           }
+       }
+    .flash-sale-caption {
+        h3 {
+           a{
+            color:#444444;
+            font-weight:700;
+            font-size:21px;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; // số dòng muốn hiển thị
+            -webkit-box-orient: vertical;
+            text-overflow: ellipse;
+            overflow: hidden;
+            @media #{$sm}{
+                font-size:17px;
+            }
+            @media #{$xs}{
+                font-size:20px;
+            }
+           }
+        }
+    }
+    .flash-sale-cart{
+        position: absolute;
+        bottom: -20%;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.4s ease-out 0s;
+        -moz-transition: all 0.4s ease-out 0s;
+        -ms-transition: all 0.4s ease-out 0s;
+        -o-transition: all 0.4s ease-out 0s;
+        transition: all 0.4s ease-out 0s;
+        a{
+            color: #fff;
+            background: linear-gradient(90deg, #ff8e96 35%, #ff9438bf 100%);
+            padding: 20px 0;
+            display: block;
+            cursor: pointer;
+        }
+    }
+    &:hover{
+        .flash-sale-cart{
+            bottom: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .flash-sale-content{
+        .price {
+            display: flex;
+            justify-content: center;
+            span{
+                &.new-price{
+                    color:#ff2020;
+                    font-size:22px;
+                    font-weight:700;
+                    display:block;
+                }
+                &.old-price{
+                    color:gray;
+                    text-decoration: line-through;
+                    font-size: 16px;
+                    padding-left: 5px;
+                    line-height: 31px;
+                    font-weight:500;
+                    display:block;
+                }
+                &.discount {
+                    background: #ff9438;
+                    align-items: center;
+                    border-radius: 2px;
+                    line-height: 24px;
+                    margin-left: 8px;
+                    padding: 3px 1px;
+                    font-size: 15px;
+                }
+              
+            }
+        }
+        .sold{
+            width: 60%;
+            margin:0 auto;
+            margin-top: 5px;
+            background: #a0a0a0cf;
+            border-radius: 9999px;
+            position: relative;
+            color: black;
+            font-size: 12px;
+            .percent{
+                position: absolute;
+                width: 30%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #ff9438bf;
+                border-top-left-radius: 9999px;
+                border-bottom-left-radius: 9999px;
+            }
+            .text{
+                p{
+                    color: white;
+                    font-size: 11px;
+                    line-height: 16px;
+                }
+            }
+        }
+        .countdown{
+            p{
+                font-size: 13px;
+            }
+           
+        }
+       
+    }
+}
+
+.single-flash-sale:hover .flash-sale-img img {
+    transform:scale(1.04)
+   }
